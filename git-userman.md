@@ -358,3 +358,100 @@ git checkout --track origin/branchName (切换为远程服务器上的命名为b
 完成以上操作之后，就可以进行提交代码了，但是在提交代码之前，你要确定你当前所在的分支
 
 git pull origin branchName （从远程分支上拉取代码）
+
+
+
+
+
+
+
+# git设置用户名密码
+
+## 设置git用户名／邮箱
+
+```
+D:\github\prokyle\gitman>git config --global user.name prolee@prokyle.com
+
+D:\github\prokyle\gitman>git config --global user.email prolee@prokyle.com
+```
+
+## git保存用户名密码
+
+这里主要是配置一个config项
+
+有两个方法，基本上原理都是一样，都是修改`.git/config`文件
+
+1.在项目所在位置打开git-bash， 在git bash交互环境输入命令：
+
+```bash
+git config credential.helper store
+```
+
+2.使用如下命令，修改config文件即可保存
+
+```bash
+echo "[credential]" >> .git/config
+echo "    helper = store" >> .git/config12
+```
+
+3.直接修改`.git/config`文件
+
+```
+D:\github\prokyle\gitman>vim .git/config
+```
+
+修改成如下
+
+```
+[core]
+    repositoryformatversion = 0
+    filemode = false
+    bare = false
+    logallrefupdates = true
+    symlinks = false
+    ignorecase = true
+[remote "origin"]
+    url = https://github.com/prokyle/gitman.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+##主要是后面这两行，如果不想保存，则删除即可
+[credential]
+    helper = store
+```
+
+然后正常 push，第一次要输入账号密码，以后就不用了。就可以保存用户名密码，不用每次都输入了！
+
+## git config查看配置
+
+使用`git config --list`查看已设配置
+
+D:\github\prokyle\gitman>git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+diff.astextplain.textconv=astextplain
+rebase.autosquash=true
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+credential.helper=helper-selector
+user.email=prolee@prokyle.com
+user.name=prolee@prokyle.com
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/prokyle/gitman.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
