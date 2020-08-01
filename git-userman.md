@@ -1,5 +1,7 @@
 <u>***git笔记***</u>
 
+------
+
 # clone一个刚刚创建的Repository
 
 ```
@@ -57,11 +59,7 @@ D:\github\prokyle 的目录
 
 ![image-20200801162525321](./image/image-20200801162525321.png)
 
-
-
-
-
-
+------
 
 # 创建新的Repository
 
@@ -133,9 +131,7 @@ To https://github.com/prokyle/test.git
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
-
-
-
+------
 
 # 修改文件后，怎么提交到远程仓库
 
@@ -271,7 +267,7 @@ To https://github.com/prokyle/test.git
 
 ![image-20200801171454250](./image/image-20200801171454250.png)
 
-
+------
 
 # 创建新分支
 
@@ -325,6 +321,8 @@ To https://github.com/prokyle/test.git
 
 ![image-20200801164012180](./image/image-20200801164012180.png)
 
+------
+
 # 图形化工具git gui
 
 ```
@@ -340,6 +338,8 @@ D:\github\prokyle\test>git gui
 ![image-20200801164137739](./image/image-20200801164137739.png)
 
 ![image-20200801164146691](./image/image-20200801164146691.png)
+
+------
 
 # 创建分支命令行
 
@@ -359,11 +359,7 @@ git checkout --track origin/branchName (切换为远程服务器上的命名为b
 
 git pull origin branchName （从远程分支上拉取代码）
 
-
-
-
-
-
+------
 
 # git设置用户名密码
 
@@ -434,8 +430,8 @@ D:\github\prokyle\gitman>git config credential.helper store
 ```
 D:\github\prokyle\gitman>git add *
 
-D:\github\prokyle\gitman>git commit -m "test2"
-[master 6ea1742] test2
+D:\github\prokyle\gitman>git commit -m "%date%%time%"
+[master 6ea1742] 2020/08/01 周六17:08:35.30
  1 file changed, 98 insertions(+), 1 deletion(-)
 
 #第一次需要用户名和密码
@@ -453,13 +449,13 @@ To https://github.com/prokyle/gitman.git
    579530b..6ea1742  master -> master
 ```
 
-#再次修改一个文件然后提交
+#再次修改文件然后提交
 
 ```
 D:\github\prokyle\gitman>git add *
 
-D:\github\prokyle\gitman>git commit -m "test2"
-[master 337b550] test2
+D:\github\prokyle\gitman>git commit -m "%date%%time%"
+[master 337b550] 2020/08/01 周六17:15:37.67
  1 file changed, 2 insertions(+)
 
 #不再需要用户名和密码
@@ -475,9 +471,7 @@ To https://github.com/prokyle/gitman.git
    6ea1742..337b550  master -> master
 ```
 
-
-
-
+------
 
 ## git config查看配置
 
