@@ -425,10 +425,67 @@ D:\github\prokyle\gitman>vim .git/config
 
 然后正常 push，第一次要输入账号密码，以后就不用了。就可以保存用户名密码，不用每次都输入了！
 
+```
+D:\github\prokyle\gitman>git config credential.helper store
+
+
+```
+
+#修改一个文件然后提交
+
+```
+D:\github\prokyle\gitman>git add *
+
+D:\github\prokyle\gitman>git commit -m "test2"
+[master 6ea1742] test2
+ 1 file changed, 98 insertions(+), 1 deletion(-)
+
+#第一次需要用户名和密码
+D:\github\prokyle\gitman>git push
+Username for 'https://github.com': prolee@prokyle.com
+Password for 'https://prolee@prokyle.com@github.com':
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.34 KiB | 1.34 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/prokyle/gitman.git
+   579530b..6ea1742  master -> master
+```
+
+#再次修改一个文件然后提交
+
+```
+D:\github\prokyle\gitman>git add *
+
+D:\github\prokyle\gitman>git commit -m "test2"
+[master 337b550] test2
+ 1 file changed, 2 insertions(+)
+
+#不再需要用户名和密码
+D:\github\prokyle\gitman>git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 318 bytes | 318.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/prokyle/gitman.git
+   6ea1742..337b550  master -> master
+```
+
+
+
+
+
 ## git config查看配置
 
 使用`git config --list`查看已设配置
 
+```
 D:\github\prokyle\gitman>git config --list
 core.symlinks=false
 core.autocrlf=true
@@ -457,3 +514,4 @@ remote.origin.url=https://github.com/prokyle/gitman.git
 remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 branch.master.remote=origin
 branch.master.merge=refs/heads/master
+```
