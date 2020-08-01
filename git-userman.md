@@ -269,9 +269,7 @@ To https://github.com/prokyle/test.git
 90f3424..3bf9dd8 master -> master
 ```
 
-![image-20200801163815484](D:\github\prokyle\git\image\image-20200801163815484.png)
-
-
+![image-20200801171454250](./image/image-20200801171454250.png)
 
 
 
