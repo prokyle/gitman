@@ -287,6 +287,7 @@ D:\github\prokyle\test>git commit -m "new branchB"
 create mode 100644 git-notes.md
 
 D:\github\prokyle\test>git push origin master:BranchB
+#仓库中原本没有BranchB，提交后会生成新分支BranchB，并将本地基于master修改的代码提交到branchB中
 
 Username for 'https://github.com': prolee\@prokyle.com
 
