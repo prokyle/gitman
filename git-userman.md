@@ -133,7 +133,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 ------
 
-# 修改文件后，怎么提交到远程仓库
+# 修改/增加文件 提交到远程仓库
 
 1.git status 查看git是否有修改内容需要提交
 
@@ -266,6 +266,33 @@ To https://github.com/prokyle/test.git
 ```
 
 ![image-20200801171454250](./image/image-20200801171454250.png)
+
+------
+
+# 删除文件 提交到远程仓库
+
+```
+D:\>cd \github\prokyle\gitman
+
+D:\github\prokyle\gitman>git rm vim-userman2.md
+rm 'vim-userman2.md'
+
+D:\github\prokyle\gitman>git commit -m "%date%%time% remove vim-userman2.md"
+[master 4635124] 2020/08/02 周日12:57:12.70 remove vim-userman2.md
+ 1 file changed, 94 deletions(-)
+ delete mode 100644 vim-userman2.md
+
+D:\github\prokyle\gitman>git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 253 bytes | 253.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/prokyle/gitman.git
+   13a6466..4635124  master -> master
+```
 
 ------
 
