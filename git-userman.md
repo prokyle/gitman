@@ -294,6 +294,8 @@ To https://github.com/prokyle/gitman.git
    13a6466..4635124  master -> master
 ```
 
+![image-20200802130225457](./image/image-20200802130225457.png)
+
 ------
 
 # 创建新分支
